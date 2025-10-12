@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light only" />
+  <title>Giada Sospiro — Portfolio & CV</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<script>
+const t = {
+  it: {
+    hero_title: "Biotech → comunicazione & prodotti IVD",
+    job_title: "Biotecnologa · R&D IVD · Comunicazione scientifica",
+    hero_lead: "Biotecnologa abilitata (Albo Biologi – Sez. A). 3+ anni in R&D IVD; 2+ anni in accademia. Appassionata di divulgazione scientifica.",
+    alifax_role: "R&D Scientist — Alifax",
+    alifax_b1: "Sviluppo pannelli RT-PCR per patogeni batterici/fungini.",
+    alifax_b2: "Analisi letteratura e definizione specifiche IVD.",
+    alifax_b3: "Validazioni interne e report regolatori.",
+    icgeb_role: "Research Fellow — ICGEB",
+    icgeb_b1: "Immunità innata: ruolo proteina target.",
+    icgeb_b2: "Editing genetico; modelli cellulari KO immortalizzati.",
+    icgeb_b3: "Lavoro con modelli murini.",
+    burlo_role: "Tirocinante — IRCCS Burlo",
+    burlo_b1: "Processamento campioni clinici.",
+    burlo_b2: "Tecniche molecolari di base per diagnostica.",
+    pg_role: "Tirocinante — Osp. S. Maria della Misericordia",
+    pg_b1: "Progetto in vivo su metabolita di L. reuteri per mucosite da chemio."
+  },
+  en: {
+    hero_title: "Biotech → communication & IVD products",
+    job_title: "Biotechnologist · R&D IVD · Science Communication",
+    hero_lead: "Licensed biotechnologist (Biologists Board – Sec. A). 3+ years in IVD R&D; 2+ years in academia. Passionate about science communication.",
+    alifax_role: "R&D Scientist — Alifax",
+    alifax_b1: "Develop RT-PCR panels for bacterial/fungal pathogens.",
+    alifax_b2: "Literature review and IVD requirements definition.",
+    alifax_b3: "Internal validations and regulatory reports.",
+    icgeb_role: "Research Fellow — ICGEB",
+    icgeb_b1: "Innate immunity: target protein role.",
+    icgeb_b2: "Gene editing; immortalized KO cell models.",
+    icgeb_b3: "Work with mouse models.",
+    burlo_role: "Trainee — IRCCS Burlo",
+    burlo_b1: "Clinical samples processing.",
+    burlo_b2: "Basic molecular techniques for diagnostics.",
+    pg_role: "Trainee — S. Maria della Misericordia Hospital",
+    pg_b1: "In vivo project on L. reuteri metabolite for chemo-induced mucositis."
+  }
+};
+function setLang(lang){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if(t[lang] && t[lang][k]) el.innerHTML = t[lang][k];
+  });
+  localStorage.setItem("lang",lang);
+}
+const sel = document.getElementById("lang");
+sel.addEventListener("change", e=> setLang(e.target.value));
+setLang(localStorage.getItem("lang")||"it");
+sel.value = localStorage.getItem("lang")||"it";
+</script>
+<body>
+  <!-- NAVBAR -->
+  <!-- NAVBAR -->
+<header class="nav">
+  <div class="nav__wrap">
+    <a href="#" class="brand">Giada<span>.</span></a>
+    <nav class="nav__links">
+      <a href="#about">Chi sono</a>
+      <a href="#experience">Esperienze</a>
+      <a href="#skills">Competenze</a>
+      <a href="#education">Formazione</a>
+      <a href="#contact">Contatti</a>
+
+    
+      <!-- menu lingua con bandierine -->
+<div class="lang-switch">
+  <img src="https://flagcdn.com/w20/it.png" alt="Italiano" id="flag-it">
+  <select id="lang" aria-label="Lingua">
+    <option value="it">IT</option>
+    <option value="en">EN</option>
+  </select>
+  <img src="https://flagcdn.com/w20/gb.png" alt="English" id="flag-en">
+</div>
+
+
+      <!-- bottone scarica -->
+      <a class="btn" href="cv.pdf" download>Scarica CV</a>
+    </nav>
+
+    <!-- hamburger menu (mobile) -->
+    <button class="hamburger" aria-label="menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+  <!-- HERO -->
+  <section id="about" class="section hero">
+    <div class="container hero__grid">
+      <img src="me.png" alt="Giada Sospiro" class="avatar" loading="lazy" />
+      <div>
+        <h1 class="hero__name">Giada Sospiro</h1>
+        <h2 class="hero__title">Biotecnologa R&D · Comunicazione scientifica</h2>
+        <p class="job" data-i18n="job_title">Biotechnologist · R&D IVD · Science Communication</p>
+        <p class="lead" data-i18n="hero_lead"><strong>Biotecnologa abilitata (Albo Biologi – Sez. A). 3+ anni in R&D IVD; 2+ anni in accademia.</strong> Appassionata di divulgazione scientifica.</p>
+        <div class="actions">
+          <a class="btn" href="cv.pdf" download>Scarica CV</a>
+          <a class="btn ghost" href="#contact">Contattami</a>
+        </div>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <!-- ESPERIENZE -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section__title">Esperienze</h2>
+      <div class="cards">
+        <article class="card fade">
+  <h3><span data-i18n="alifax_role">R&D Scientist — Alifax</span> <span>10/2022 – oggi</span></h3>
+  <ul class="bullets">
+    <li data-i18n="alifax_b1">Sviluppo pannelli RT-PCR per patogeni batterici/fungini.</li>
+    <li data-i18n="alifax_b2">Analisi letteratura e definizione specifiche IVD.</li>
+    <li data-i18n="alifax_b3">Validazioni interne e report regolatori.</li>
+  </ul>
+</article>
+
+<article class="card fade">
+  <h3><span data-i18n="icgeb_role">Research Fellow — ICGEB</span> <span>08/2022 – 10/2022</span></h3>
+  <ul class="bullets">
+    <li data-i18n="icgeb_b1">Immunità innata: ruolo proteina target.</li>
+    <li data-i18n="icgeb_b2">Editing genetico; modelli cellulari KO immortalizzati.</li>
+    <li data-i18n="icgeb_b3">Lavoro con modelli murini.</li>
+  </ul>
+</article>
+
+<article class="card fade">
+  <h3><span data-i18n="burlo_role">Tirocinante — IRCCS Burlo</span> <span>03/2022 – 08/2022</span></h3>
+  <ul class="bullets">
+    <li data-i18n="burlo_b1">Processamento campioni clinici.</li>
+    <li data-i18n="burlo_b2">Tecniche molecolari di base per diagnostica.</li>
+  </ul>
+</article>
+
+<article class="card fade">
+  <h3><span data-i18n="pg_role">Tirocinante — Osp. S. Maria della Misericordia</span> <span>01/2019 – 10/2019</span></h3>
+  <ul class="bullets">
+    <li data-i18n="pg_b1">Progetto in vivo su metabolita di <em>L. reuteri</em> per mucosite da chemio.</li>
+  </ul>
+</article>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container grid-2">
+      <div>
+        <h2 class="section__title">Competenze tecniche</h2>
+        <ul class="list">
+          <li>IVD · qPCR · Colture cellulari · Editing genetico</li>
+          <li>Analisi dati · Report scientifici</li>
+          <li>Python (beginner)</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section__title">Soft skill</h2>
+        <ul class="list">
+          <li>Curiosa · Comunicativa</li>
+          <li>Appassionata di innovazione e tecnologia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section__title">Formazione</h2>
+      <ul class="timeline">
+        <li><strong>LM Biotecnologie Mediche</strong> — Univ. Trieste — 15/10/2022</li>
+        <li><strong>LT Biotecnologie</strong> — Univ. Perugia — 15/10/2019</li>
+        <li><strong>Abilitazione Albo Biologi — Sez. A</strong> — 2022</li>
+      </ul>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section__title">Contatti</h2>
+      <p>Email: <a href="mailto:giada.sospiro@gmail.com">giada.sospiro@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/sighjade" target="_blank">github.com/sighjade</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/giada-sospiro-5699bb194/" target="_blank">linkedin.com/in/giada-sospiro-5699bb194</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © <span id="y"></span> Giada Sospiro
+  </footer>
+
+  <script>
+    // anno footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // hamburger mobile
+    const btn = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav__links');
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // fade-in on scroll
+    const els = document.querySelectorAll('.fade');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+    },{threshold:.2});
+    els.forEach(el=>io.observe(el));
+  </script>
+</body>
+</html>
