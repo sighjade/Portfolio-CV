@@ -572,3 +572,39 @@ a:hover{text-decoration:underline}
   background: var(--pri);
   color: white;
 }
+/* ===== MOBILE FIX ===== */
+html{ -webkit-text-size-adjust:100% }
+body{ overflow-x:hidden }
+
+@media (max-width: 600px){
+  /* spacing generale */
+  .section, .card, #experience, #skills, #education, #contact{ 
+    margin: 28px auto; 
+    padding: 18px 16px; 
+    border-radius: 16px;
+  }
+  .container, .intro{ max-width: 92vw; padding: 24px 12px }
+
+  /* hero */
+  .avatar{ width:110px; height:110px; border-width:3px; margin-bottom:10px }
+  .intro h1{ font-size: clamp(1.6rem, 8vw, 2.2rem) }
+  .intro h2{ font-size: 1rem; line-height:1.3 }
+  .bio-details{ width:100%; max-width:none; padding:14px 12px }
+  .bio-details ul{ font-size:.95rem; line-height:1.45 }
+
+  /* bottoni */
+  .buttons{ flex-direction:column; gap:10px }
+  .btn, .btn-outline{ width:100%; text-align:center; padding:12px 14px }
+
+  /* navbar */
+  .nav__wrap{ padding:10px 12px; gap:8px }
+  .nav__links{ gap:10px; flex-wrap:wrap; justify-content:center }
+  
+  /* riquadri elenco */
+  .experience-item, .skills-group, .edu-item, .contact-item{
+    padding:14px 12px; border-radius:14px
+  }
+  .experience-item h3.role{ font-size:1.05rem }
+  .company{ font-size:.95rem }
+  .skills-group h3{ font-size:1.05rem }
+}
