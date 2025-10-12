@@ -9,89 +9,38 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Source+Sans+3:wght@400;500&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Icons (Lucide) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
   <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
-<script>
-const t = {
-  it: {
-    job_title: "Biotecnologa · R&D IVD · Comunicazione scientifica",
-    hero_lead: "Biotecnologa abilitata (Albo Biologi – Sez. A). 3+ anni in R&D IVD; 2+ anni in accademia. Appassionata di divulgazione scientifica.",
-    alifax_role: "R&D Scientist — Alifax",
-    alifax_b1: "Sviluppo pannelli RT-PCR per patogeni batterici/fungini.",
-    alifax_b2: "Analisi letteratura e definizione specifiche IVD.",
-    alifax_b3: "Validazioni interne e report regolatori.",
-    icgeb_role: "Research Fellow — ICGEB",
-    icgeb_b1: "Immunità innata: ruolo proteina target.",
-    icgeb_b2: "Editing genetico; modelli cellulari KO immortalizzati.",
-    icgeb_b3: "Lavoro con modelli murini.",
-    burlo_role: "Tirocinante — IRCCS Burlo",
-    burlo_b1: "Processamento campioni clinici.",
-    burlo_b2: "Tecniche molecolari di base per diagnostica.",
-    pg_role: "Tirocinante — Osp. S. Maria della Misericordia",
-    pg_b1: "Progetto in vivo su metabolita di L. reuteri per mucosite da chemio."
-  },
-  en: {
-    job_title: "Biotechnologist · R&D IVD · Science Communication",
-    hero_lead: "Licensed biotechnologist (Biologists Board – Sec. A). 3+ years in IVD R&D; 2+ years in academia. Passionate about science communication.",
-    alifax_role: "R&D Scientist — Alifax",
-    alifax_b1: "Develop RT-PCR panels for bacterial/fungal pathogens.",
-    alifax_b2: "Literature review and IVD requirements definition.",
-    alifax_b3: "Internal validations and regulatory reports.",
-    icgeb_role: "Research Fellow — ICGEB",
-    icgeb_b1: "Innate immunity: target protein role.",
-    icgeb_b2: "Gene editing; immortalized KO cell models.",
-    icgeb_b3: "Work with mouse models.",
-    burlo_role: "Trainee — IRCCS Burlo",
-    burlo_b1: "Clinical samples processing.",
-    burlo_b2: "Basic molecular techniques for diagnostics.",
-    pg_role: "Trainee — S. Maria della Misericordia Hospital",
-    pg_b1: "In vivo project on L. reuteri metabolite for chemo-induced mucositis."
-  }
-};
-function setLang(lang){
-  document.querySelectorAll("[data-i18n]").forEach(el=>{
-    const k = el.getAttribute("data-i18n");
-    if(t[lang] && t[lang][k]) el.innerHTML = t[lang][k];
-  });
-  localStorage.setItem("lang",lang);
-}
-const sel = document.getElementById("lang");
-sel.addEventListener("change", e=> setLang(e.target.value));
-setLang(localStorage.getItem("lang")||"it");
-sel.value = localStorage.getItem("lang")||"it";
-</script>
-<script>
-  lucide.createIcons();
-</script>
 <body>
-  <!-- NAVBAR -->
   <!-- NAVBAR -->
 <header class="nav">
   <div class="nav__wrap">
     <a href="#" class="brand">Giada<span>.</span></a>
+
     <nav class="nav__links">
-      <a href="#about">Chi sono</a>
-      <a href="#experience">Esperienze</a>
-      <a href="#skills">Competenze</a>
-      <a href="#education">Formazione</a>
-      <a href="#contact">Contatti</a>
+      <a href="#about"      data-i18n="nav_about">Chi sono</a>
+      <a href="#experience" data-i18n="nav_exp">Esperienze</a>
+      <a href="#skills"     data-i18n="nav_skills">Competenze</a>
+      <a href="#education"  data-i18n="nav_edu">Formazione</a>
+      <a href="#contact"    data-i18n="nav_contact">Contatti</a>
 
-    
       <!-- menu lingua con bandierine -->
-<div class="lang-switch">
-  <img src="https://flagcdn.com/w20/it.png" alt="Italiano" id="flag-it">
-  <select id="lang" aria-label="Lingua">
-    <option value="it">IT</option>
-    <option value="en">EN</option>
-  </select>
-  <img src="https://flagcdn.com/w20/gb.png" alt="English" id="flag-en">
-</div>
-
+      <div class="lang-switch">
+        <img src="https://flagcdn.com/w20/it.png" alt="Italiano" id="flag-it">
+        <select id="lang" aria-label="Lingua">
+          <option value="it">IT</option>
+          <option value="en">EN</option>
+        </select>
+        <img src="https://flagcdn.com/w20/gb.png" alt="English" id="flag-en">
+      </div>
 
       <!-- bottone scarica -->
-      <a class="btn" href="cv.pdf" download>Scarica CV</a>
+      <a class="btn" href="cv.pdf" download data-i18n="btn_cv">Scarica CV</a>
     </nav>
 
     <!-- hamburger menu (mobile) -->
@@ -99,123 +48,126 @@ sel.value = localStorage.getItem("lang")||"it";
   </div>
 </header>
 
-  <!-- HERO -->
-  <section id="hero" class="intro">
+<!-- HERO -->
+<section id="about" class="intro">
   <img src="me.png" alt="Giada Sospiro" class="avatar">
 
   <h1>Giada Sospiro</h1>
-  <h2><strong>Biotecnologa R&D — Comunicazione scientifica</strong></h2>
+  <h2><strong data-i18n="job_title">Biotecnologa R&D — Comunicazione scientifica</strong></h2>
 
-  <details class="bio-details">
-    <summary>📋 Dettagli professionali</summary>
-    <ul>
-      <li>🧬 Biotecnologa abilitata (Albo Biologi — Sez. A)</li>
-      <li>🧪 3+ anni di esperienza in R&D IVD</li>
-      <li>🏫 2+ anni di esperienza in accademia</li>
-    </ul>
-  </details>
+ <details class="bio-details">
+  <summary data-i18n="bio_summary">📋 Dettagli professionali</summary>
+  <ul>
+    <li data-i18n="bio_b1">🧬 Biotecnologa abilitata (Albo Biologi — Sez. A)</li>
+    <li data-i18n="bio_b2">🧪 3+ anni di esperienza in R&D IVD</li>
+    <li data-i18n="bio_b3">🏫 2+ anni di esperienza in accademia</li>
+  </ul>
+</details>
 
   <div class="buttons">
-    <a href="cv.pdf" download class="btn">Scarica CV</a>
-    <a href="#contact" class="btn-outline">Contattami</a>
+    <a href="cv.pdf" download class="btn" data-i18n="btn_cv">Scarica CV</a>
+    <a href="#contact" class="btn-outline" data-i18n="btn_contact">Contattami</a>
   </div>
 </section>
 
-  <!-- ESPERIENZE -->
-  <section id="experience">
-  <h2>Esperienze</h2>
+<!-- ESPERIENZE -->
+<section id="experience">
+  <h2 data-i18n="exp_title">Esperienze</h2>
 
   <div class="experience-item">
-    <h3 class="role">Ricercatrice R&D settore IVD</h3>
+    <h3 class="role" data-i18n="alifax_role">Ricercatrice R&D settore IVD — Alifax</h3>
     <p class="company">Alifax R&D · Trieste · 10/2022 – oggi</p>
     <ul>
-      <li>Sviluppo e validazione di prodotti IVD per identificazione patogeni tramite RT-PCR.</li>
-      <li>Analisi bibliografica e supporto all’innovazione di prodotto.</li>
+      <li data-i18n="alifax_b1">Sviluppo e validazione di prodotti IVD per identificazione patogeni tramite RT-PCR.</li>
+      <li data-i18n="alifax_b2">Analisi bibliografica e supporto all’innovazione di prodotto.</li>
+      <li data-i18n="alifax_b3">Validazioni interne e report regolatori.</li>
     </ul>
   </div>
 
   <div class="experience-item">
-    <h3 class="role">Ricercatrice · Immunità Innata</h3>
+    <h3 class="role" data-i18n="icgeb_role">Ricercatrice · Immunità Innata — ICGEB</h3>
     <p class="company">ICGEB · Trieste · 08/2022 – 10/2022</p>
     <ul>
-      <li>Studio del ruolo di proteine immunitarie in modelli murini.</li>
-      <li>Generazione di linee cellulari knock-out tramite editing genetico.</li>
+      <li data-i18n="icgeb_b1">Studio del ruolo di proteine immunitarie in modelli murini.</li>
+      <li data-i18n="icgeb_b2">Generazione di linee cellulari knock-out tramite editing genetico.</li>
+      <li data-i18n="icgeb_b3">Lavoro con modelli murini.</li>
     </ul>
   </div>
 
   <div class="experience-item">
-    <h3 class="role">Biologa di laboratorio · Diagnostica molecolare</h3>
+    <h3 class="role" data-i18n="burlo_role">Tirocinante — IRCCS Burlo</h3>
     <p class="company">IRCCS Burlo Garofolo · Trieste · 03/2022 – 08/2022</p>
     <ul>
-      <li>Analisi e processamento di campioni clinici per studi diagnostici.</li>
+      <li data-i18n="burlo_b1">Processamento campioni clinici.</li>
+      <li data-i18n="burlo_b2">Tecniche molecolari di base per diagnostica.</li>
     </ul>
   </div>
 
   <div class="experience-item">
-    <h3 class="role">Tirocinante · Ricerca traslazionale</h3>
-    <p class="company">Ospedale Santa Maria della Misericordia · Perugia · 01/2019 – 10/2019</p>
+    <h3 class="role" data-i18n="pg_role">Tirocinante — Osp. S. Maria della Misericordia</h3>
+    <p class="company">Perugia · 01/2019 – 10/2019</p>
     <ul>
-      <li>Studio in vivo di un metabolita di <em>Lactobacillus reuteri</em> per mucosite orale indotta da chemioterapia.</li>
+      <li data-i18n="pg_b1">Progetto in vivo su metabolita di L. reuteri per mucosite da chemio.</li>
     </ul>
   </div>
 </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-  <h2>Competenze</h2>
+<!-- SKILLS -->
+<section id="skills">
+  <h2 data-i18n="skills_title">Competenze</h2>
 
   <div class="skills-group">
-    <h3>🧬 Tecniche</h3>
+    <h3 data-i18n="skills_tech">🧬 Tecniche</h3>
     <ul>
-      <li><i data-lucide="microscope"></i> IVD</li>
-      <li><i data-lucide="activity"></i> qPCR</li>
-      <li><i data-lucide="flask-conical"></i> Colture cellulari</li>
-      <li><i data-lucide="dna"></i> Editing genetico</li>
+      <li><i data-lucide="microscope"></i> <span data-i18n="s_ivd">IVD</span></li>
+      <li><i data-lucide="activity"></i> <span data-i18n="s_qpcr">qPCR</span></li>
+      <li><i data-lucide="flask-conical"></i> <span data-i18n="s_cell">Colture cellulari</span></li>
+      <li><i data-lucide="dna"></i> <span data-i18n="s_edit">Editing genetico</span></li>
     </ul>
   </div>
 
   <div class="skills-group">
-    <h3>💻 Tools</h3>
+    <h3 data-i18n="skills_tools">💻 Tools</h3>
     <ul>
-      <li><i data-lucide="code-2"></i> Python (beginner)</li>
-      <li><i data-lucide="table"></i> Excel</li>
+      <li><i data-lucide="code-2"></i> <span data-i18n="s_py">Python (beginner)</span></li>
+      <li><i data-lucide="table"></i> <span data-i18n="s_xls">Excel</span></li>
     </ul>
   </div>
 
   <div class="skills-group">
-    <h3>🌐 Lingue</h3>
+    <h3 data-i18n="skills_lang">🌐 Lingue</h3>
     <ul>
-      <li><i data-lucide="flag"></i> Italiano — madrelingua</li>
-      <li><i data-lucide="book-open-text"></i> Inglese — livello B2</li>
+      <li><i data-lucide="flag"></i> <span data-i18n="s_it">Italiano — madrelingua</span></li>
+      <li><i data-lucide="book-open-text"></i> <span data-i18n="s_en">Inglese — livello B2</span></li>
     </ul>
   </div>
 </section>
-  <!-- EDUCATION -->
-  <section id="education">
-  <h2>Formazione</h2>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 data-i18n="edu_title">Formazione</h2>
 
   <div class="edu-item">
-    <h3>🎓 Laurea Magistrale in Biotecnologie Mediche</h3>
-    <p class="edu-detail">Università degli Studi di Trieste · 15/10/2022</p>
+    <h3 data-i18n="edu_m">🎓 Laurea Magistrale in Biotecnologie Mediche</h3>
+    <p class="edu-detail" data-i18n="edu_m_d">Università degli Studi di Trieste · 15/10/2022</p>
   </div>
 
   <div class="edu-item">
-    <h3>🎓 Laurea Triennale in Biotecnologie</h3>
-    <p class="edu-detail">Università degli Studi di Perugia · 15/10/2019</p>
+    <h3 data-i18n="edu_b">🎓 Laurea Triennale in Biotecnologie</h3>
+    <p class="edu-detail" data-i18n="edu_b_d">Università degli Studi di Perugia · 15/10/2019</p>
   </div>
 
   <div class="edu-item">
-    <h3>📜 Abilitazione Albo Biologi — Sezione A</h3>
-    <p class="edu-detail">Anno 2022</p>
+    <h3 data-i18n="edu_license">📜 Abilitazione Albo Biologi — Sezione A</h3>
+    <p class="edu-detail" data-i18n="edu_license_d">Anno 2022</p>
   </div>
 </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-  <h2>Contatti</h2>
+<!-- CONTACT -->
+<section id="contact">
+  <h2 data-i18n="contact_title">Contatti</h2>
 
   <div class="contact-item">
-    <p>📧 <strong>Email:</strong> <a href="mailto:giada.sospiro@gmail.com">giada.sospiro@gmail.com</a></p>
+    <p>📧 <strong data-i18n="c_email_label">Email:</strong> <a href="mailto:giada.sospiro@gmail.com">giada.sospiro@gmail.com</a></p>
   </div>
 
   <div class="contact-item">
@@ -227,28 +179,128 @@ sel.value = localStorage.getItem("lang")||"it";
   </div>
 </section>
 
-  <footer class="footer">
-    © <span id="y"></span> Giada Sospiro
-  </footer>
+<footer class="footer">
+  © <span id="y"></span> Giada Sospiro
+</footer>
 
-  <script>
-    // anno footer
-    document.getElementById('y').textContent = new Date().getFullYear();
+<!-- SCRIPTS: i18n + init (dopo il DOM) -->
+<script>
+  // anno footer
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-    // hamburger mobile
-    const btn = document.querySelector('.hamburger');
-    const nav = document.querySelector('.nav__links');
-    btn.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  // hamburger mobile
+  const btn = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav__links');
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  // lucide icons
+  lucide.createIcons();
+
+  // ===== i18n =====
+  const T = {
+    it: {
+      nav_about:"Chi sono", nav_exp:"Esperienze", nav_skills:"Competenze", nav_edu:"Formazione",
+      nav_contact:"Contatti", btn_cv:"Scarica CV", btn_contact:"Contattami",
+      job_title:"Biotecnologa · R&D IVD · Comunicazione scientifica",
+      exp_title:"Esperienze", skills_title:"Competenze",
+      skills_tech:"🧬 Tecniche", skills_tools:"💻 Tools", skills_lang:"🌐 Lingue",
+      s_ivd:"IVD", s_qpcr:"qPCR", s_cell:"Colture cellulari", s_edit:"Editing genetico",
+      s_py:"Python (beginner)", s_xls:"Excel", s_it:"Italiano — madrelingua", s_en:"Inglese — livello B2",
+      edu_title:"Formazione", contact_title:"Contatti", c_email_label:"Email:",
+      alifax_role:"R&D Scientist — Alifax",
+      alifax_b1:"Sviluppo pannelli RT-PCR per patogeni batterici/fungini.",
+      alifax_b2:"Analisi letteratura e definizione specifiche IVD.",
+      alifax_b3:"Validazioni interne e report regolatori.",
+      icgeb_role:"Research Fellow — ICGEB",
+      icgeb_b1:"Immunità innata: ruolo proteina target.",
+      icgeb_b2:"Editing genetico; modelli cellulari KO immortalizzati.",
+      icgeb_b3:"Lavoro con modelli murini.",
+      burlo_role:"Tirocinante — IRCCS Burlo",
+      burlo_b1:"Processamento campioni clinici.",
+      burlo_b2:"Tecniche molecolari di base per diagnostica.",
+      pg_role:"Tirocinante — Osp. S. Maria della Misericordia",
+      pg_b1:"Progetto in vivo su metabolita di L. reuteri per mucosite da chemio."
+      bio_summary:"📋 Dettagli professionali",
+      bio_b1:"🧬 Biotecnologa abilitata (Albo Biologi — Sez. A)",
+      bio_b2:"🧪 3+ anni di esperienza in R&D IVD",
+      bio_b3:"🏫 2+ anni di esperienza in accademia",
+      edu_m:"🎓 Laurea Magistrale in Biotecnologie Mediche",
+      edu_m_d:"Università degli Studi di Trieste · 15/10/2022",
+      edu_b:"🎓 Laurea Triennale in Biotecnologie",
+      edu_b_d:"Università degli Studi di Perugia · 15/10/2019",
+      edu_license:"📜 Abilitazione Albo Biologi — Sezione A",
+      edu_license_d:"Anno 2022",
+    },
+    en: {
+      nav_about:"About", nav_exp:"Experience", nav_skills:"Skills", nav_edu:"Education",
+      nav_contact:"Contact", btn_cv:"Download CV", btn_contact:"Contact me",
+      job_title:"Biotechnologist · R&D IVD · Science Communication",
+      exp_title:"Experience", skills_title:"Skills",
+      skills_tech:"🧬 Technical", skills_tools:"💻 Tools", skills_lang:"🌐 Languages",
+      s_ivd:"IVD", s_qpcr:"qPCR", s_cell:"Cell culture", s_edit:"Gene editing",
+      s_py:"Python (beginner)", s_xls:"Excel", s_it:"Italian — native", s_en:"English — B2",
+      edu_title:"Education", contact_title:"Contact", c_email_label:"Email:",
+      alifax_role:"R&D Scientist — Alifax",
+      alifax_b1:"Develop RT-PCR panels for bacterial/fungal pathogens.",
+      alifax_b2:"Literature review and IVD requirements definition.",
+      alifax_b3:"Internal validations and regulatory reports.",
+      icgeb_role:"Research Fellow — ICGEB",
+      icgeb_b1:"Innate immunity: target protein role.",
+      icgeb_b2:"Gene editing; immortalized KO cell models.",
+      icgeb_b3:"Work with mouse models.",
+      burlo_role:"Trainee — IRCCS Burlo",
+      burlo_b1:"Clinical samples processing.",
+      burlo_b2:"Basic molecular techniques for diagnostics.",
+      pg_role:"Trainee — S. Maria della Misericordia Hospital",
+      pg_b1:"In vivo project on L. reuteri metabolite for chemo-induced mucositis."
+      bio_summary:"📋 Professional details",
+      bio_b1:"🧬 Licensed Biotechnologist (Biologists Board – Sec. A)",
+      bio_b2:"🧪 3+ years of experience in IVD R&D",
+      bio_b3:"🏫 2+ years of academic experience",
+      edu_m:"🎓 MSc in Medical Biotechnology",
+      edu_m_d:"University of Trieste · 15/10/2022",
+      edu_b:"🎓 BSc in Biotechnology",
+      edu_b_d:"University of Perugia · 15/10/2019",
+      edu_license:"📜 Professional license — Biologists Board Sec. A",
+      edu_license_d:"Year 2022",
+    }
+  };
+
+  function setLang(lang){
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const k = el.dataset.i18n;
+      const v = T[lang] && T[lang][k];
+      if(v != null) el.textContent = v;
     });
+    localStorage.setItem('lang', lang);
+    document.getElementById('flag-it')?.classList.toggle('active', lang==='it');
+    document.getElementById('flag-en')?.classList.toggle('active', lang==='en');
+    const sel = document.getElementById('lang');
+    if (sel) sel.value = lang;
+  }
 
-    // fade-in on scroll
-    const els = document.querySelectorAll('.fade');
+  // init + handlers
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const remembered = localStorage.getItem('lang') || 'it';
+    setLang(remembered);
+    document.getElementById('lang')?.addEventListener('change', e=> setLang(e.target.value));
+    document.getElementById('flag-it')?.addEventListener('click', ()=> setLang('it'));
+    document.getElementById('flag-en')?.addEventListener('click', ()=> setLang('en'));
+  });
+</script>
+
+<!-- fade-in on scroll (se usi .fade) -->
+<script>
+  const els = document.querySelectorAll('.fade');
+  if (els.length){
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
     },{threshold:.2});
     els.forEach(el=>io.observe(el));
-  </script>
+  }
+</script>
 </body>
 </html>
