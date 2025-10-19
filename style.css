@@ -76,7 +76,7 @@ a:hover{text-decoration:underline}
 .section__title{font-size:clamp(22px,3.2vw,28px);margin:0 0 16px}
 .lead{color:var(--mut);font-size:1.1rem;margin-top:8px}
 
-/* Hero a griglia “Ermano-style” */
+/* Hero a griglia “-style” */
 .hero__grid{display:grid;gap:24px;align-items:center}
 @media(min-width:920px){.hero__grid{grid-template-columns:160px 1fr}}
 .avatar{
@@ -183,7 +183,7 @@ a:hover{text-decoration:underline}
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* allinea perfettamente anche su schermi larghi */
+/* allinea perfettamente anche su schi larghi */
 .intro {
   display: flex;
   flex-direction: column;
